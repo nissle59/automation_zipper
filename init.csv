@@ -1,0 +1,3 @@
+ARC_Name;EXE_Name;src_Folder_name;dst_Folder_name;EXE_link
+Notepad++;Setup;Docs_notepad;Docs;https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.4.9/npp.8.4.9.Installer.exe
+Sublime Text;Setup;Docs_st;Docs;https://download.sublimetext.com/sublime_text_build_4143_x64_setup.exe
