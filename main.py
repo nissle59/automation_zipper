@@ -138,10 +138,10 @@ def compress(i: Item):
                 logging.error(f'Неизвестная проблема при обработке файла {i.arc_name}.zip')
                 ef = True
             if ef:
-                logging.info(f'Скачивается {fname} для архива {i.arc_name}...')
+                logging.info(f'Скачивается {fname} для архива {i.arc_name}.zip...')
                 try:
                     urllib.request.urlretrieve(i.exe_link, f'Downloads/{fname}')
-                    logging.info(f'Добавляется папка {i.dst_folder_name} в архив {i.arc_name}')
+                    logging.info(f'Добавляется папка {i.dst_folder_name} в архив {i.arc_name}.zip')
                     zipdir(f'{i.src_folder_name}/', f'{i.dst_folder_name}/', zipf)
                     logging.info(f'Добавляется скачанный файл {fname} под именем {i.exe_name}.exe')
                     zipf.write(f'Downloads/{fname}', arcname=f'{i.exe_name}.exe')
@@ -149,10 +149,10 @@ def compress(i: Item):
                 except:
                     logging.error(f'Не удалось скачать файл {fname}, проверьте доступность файла по ссылке {i.exe_link}')
     else:
-        logging.info(f'Скачивается {fname} для архива {i.arc_name}...')
+        logging.info(f'Скачивается {fname} для архива {i.arc_name}.zip...')
         try:
             urllib.request.urlretrieve(i.exe_link, f'Downloads/{fname}')
-            logging.info(f'Добавляется папка {i.dst_folder_name} в архив {i.arc_name}')
+            logging.info(f'Добавляется папка {i.dst_folder_name} в архив {i.arc_name}.zip')
             with zipfile.ZipFile(f'out/{i.arc_name}.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
                 zipdir(f'{i.src_folder_name}/', f'{i.dst_folder_name}/', zipf)
                 logging.info(f'Добавляется скачанный файл {fname} под именем {i.exe_name}.exe')
